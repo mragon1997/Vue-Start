@@ -28,6 +28,22 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
+
+// FireBase
+import firebase from 'firebase'
+var config = {
+  apiKey: "AIzaSyBudmmBeLunNykLYQa__W917iKdMhrmJEg",
+  authDomain: "hello-firebase-4513a.firebaseapp.com",
+  databaseURL: "https://hello-firebase-4513a.firebaseio.com",
+  projectId: "hello-firebase-4513a",
+  storageBucket: "hello-firebase-4513a.appspot.com",
+  messagingSenderId: "796535321415"
+}
+firebase.initializeApp(config)
+const database = firebase.database()
+
+
+
 new Vue({
   router,
   store,
