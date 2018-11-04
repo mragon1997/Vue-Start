@@ -1,0 +1,2 @@
+const STORAGE = window.localStorage
+

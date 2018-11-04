@@ -15,15 +15,23 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
+#### 基本技能
 
-### Lints and fixes files
-```
-npm run lint
-```
+* vue项目构建
+* 目录结构
+* 使用pug
+* 使用Sass
+* 使用Element
+* 使用Vue-Router
+* 使用Vuex
+* 使用HighChart
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### 解决方案
+
+* admin布局实现
+
+#### 问题记录
+
+#### 待探讨问题
+
+* sass文件的盲目嵌套
