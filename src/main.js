@@ -17,16 +17,16 @@ import _ from 'lodash'
 
 // Router
 import router from './router'
-let SideBar = []
-const Routes = router.options.routes
+// let SideBar = []
+// const Routes = router.options.routes
 
-router.beforeEach((to, from, next) => {
-  SideBar = _.filter(Routes, route => {
-    // console.log(route.meta.parent == to.name)
-    return route.meta.parent == to.name
-  })
-  next()
-})
+// router.beforeEach((to, from, next) => {
+//   SideBar = _.filter(Routes, route => {
+//     // console.log(route.meta.parent == to.name)
+//     return route.meta.parent == to.name
+//   })
+//   next()
+// })
 
 
 // FireBase
