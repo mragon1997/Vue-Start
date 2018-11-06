@@ -8,43 +8,48 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    {
+      path: '/',
+      redirect: '/biz/first',
+      meta: { parent: 'biz'}
+    },
     // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: Home
+    //   path: '/biz',
+    //   name: 'biz',
+    //   meta: { parent: '' }
+    //   // route level code-splitting
+    //   // this generates a separate chunk (about.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
     // },
     {
-      path: '/biz',
-      name: 'biz',
-      meta: { parent: ''},
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/biz/index.vue')
-    },
-    {
-      path: '/first',
+      path: '/biz/first',
       name: 'first',
-      meta: { parent: 'biz'},
-      component: () => import('./views/biz/first/index.vue')
+      meta: { parent: 'biz' }
     },
     {
-      path: '/exp',
-      name: 'exp',
-      meta: { parent: ''},
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/exp/index.vue')
+      path: '/biz/two',
+      name: 'two',
+      meta: { parent: 'biz' }
     },
     {
-      path: '/ele',
-      name: 'ele',
-      meta: { parent: ''},
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/ele/index.vue')
-    }
+      path: '/exp/three',
+      name: 'three',
+      meta: { parent: 'exp' }
+    },
+    {
+      path: '/ele/four',
+      name: 'four',
+      meta: { parent: 'ele' }
+    },
+    {
+      path: '/ele/five',
+      name: 'five',
+      meta: { parent: 'ele' }
+    },
+    {
+      path: '/ele/six',
+      name: 'six',
+      meta: { parent: 'ele' }
+    },
   ]
 })

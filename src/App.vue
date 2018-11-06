@@ -1,33 +1,55 @@
 <template lang="pug">
   #app
     el-menu.index-main-menu(
-      :default-active="'1'"
+      :default-active="mainMenuActive"
       class="el-menu-demo" 
       mode="horizontal"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
-      router
     )
-      el-menu-item(index="/biz") 业务组件
-      el-menu-item(index="/exp") 用户体验
-      el-menu-item(index="/ele") Element拓展
+      el-menu-item(index="biz" @click="handleMainMenuToggle('biz')") 业务组件
+      el-menu-item(index="exp" @click="handleMainMenuToggle('exp')") 用户体验
+      el-menu-item(index="ele" @click="handleMainMenuToggle('ele')") Element拓展
     .main-container
       .left-container
         el-menu(
-          :default-active="'1-1'"
+          :default-active="$route.path"
           class="el-menu-vertical-demo"
           background-color="#eee"
+          router
         )
-          el-menu-item(index="1-1") 首页
-          el-menu-item(index="1-2") 管理
+          el-menu-item(v-for="(route, index) in currentSideRoutes" :key="index" :index="route.path") {{route.path}}
       .right-container
         router-view
 </template>
 
 <script>
 export default {
-  mounted(){}
+  data() {
+    return {
+      mainMenuActive: 'biz', // 当前主路由
+      currentSideRoutes: []  // 当前二级路由组
+    }
+  },
+  watch: {
+    // '$route.path': function(){
+    //   console.log(this.$route.path)
+    // }
+  },
+  methods: {
+    handleMainMenuToggle(mainMenu) {
+      let me = this
+      const Routes = me.$router.options.routes
+      me.currentSideRoutes = _.filter(Routes, r => r.meta.parent === mainMenu)
+      // me.$router.push(me.currentSideRoutes[0].path)
+      // console.log(me.mainMenuActive)
+    }
+  },
+  mounted(){
+    let me = this
+    me.handleMainMenuToggle('biz')
+  }
 }
 </script>
 
