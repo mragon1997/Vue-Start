@@ -24,7 +24,8 @@
             i.el-icon-menu
             span(slot="title") {{route.name}}
       .right-container
-        router-view
+        transition(enter-active-class="animated fadeIn")
+          router-view
 </template>
 
 <script>

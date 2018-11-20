@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
     "core-js": "^2.5.7",
     "element-ui": "^2.4.9",
     "firebase": "^5.5.7",

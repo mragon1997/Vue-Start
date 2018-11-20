@@ -7,6 +7,9 @@ Vue.config.productionTip = false
 // Style
 import '@/assets/styles/index.sass'
 
+// Animate
+import Animate from 'animate.css'
+
 // Element
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
