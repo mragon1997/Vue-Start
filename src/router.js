@@ -9,19 +9,6 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      redirect: '/biz/first',
-      meta: { parent: 'biz'}
-    },
-    // {
-    //   path: '/biz',
-    //   name: 'biz',
-    //   meta: { parent: '' }
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    // },
-    {
       path: '/biz/first',
       name: 'first',
       meta: { parent: 'biz' }

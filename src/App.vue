@@ -14,12 +14,11 @@
     .main-container
       .left-container
         el-menu(
-          :default-active="$route.path"
           class="el-menu-vertical-demo"
           background-color="#eee"
           router
         )
-          el-menu-item(v-for="(route, index) in currentSideRoutes" :key="index" :index="route.path") {{route.path}}
+          el-menu-item(v-for="(route, index) in currentSideRoutes" :key="index" :index="route.path" :class="{ 'is-active' : route.path === $route.path }") {{route.name}}
       .right-container
         router-view
 </template>
@@ -33,17 +32,14 @@ export default {
     }
   },
   watch: {
-    // '$route.path': function(){
-    //   console.log(this.$route.path)
-    // }
   },
   methods: {
+    // 主菜单切换事件
     handleMainMenuToggle(mainMenu) {
       let me = this
       const Routes = me.$router.options.routes
       me.currentSideRoutes = _.filter(Routes, r => r.meta.parent === mainMenu)
-      // me.$router.push(me.currentSideRoutes[0].path)
-      // console.log(me.mainMenuActive)
+      me.$router.push(me.currentSideRoutes[0].path)
     }
   },
   mounted(){
