@@ -26,6 +26,7 @@ npm run build
 * 使用Vuex
 * 使用HighChart
 
+
 #### 解决方案
 
 * admin布局实现

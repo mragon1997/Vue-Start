@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from './views/Home.vue'
 
 Vue.use(Router)
 
@@ -11,17 +10,20 @@ export default new Router({
     {
       path: '/biz/first',
       name: 'first',
-      meta: { parent: 'biz' }
+      meta: { parent: 'biz' },
+      component: () => import('./views/biz/first.vue')
     },
     {
       path: '/biz/two',
       name: 'two',
-      meta: { parent: 'biz' }
+      meta: { parent: 'biz' },
+      component: () => import('./views/biz/two.vue')
     },
     {
       path: '/exp/three',
       name: 'three',
-      meta: { parent: 'exp' }
+      meta: { parent: 'exp' },
+      component: () => import('./views/exp/three.vue')
     },
     {
       path: '/ele/four',

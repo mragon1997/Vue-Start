@@ -8,27 +8,36 @@
       text-color="#fff"
       active-text-color="#ffd04b"
     )
+      hamburger(:isCollapse.sync="isCollapse")
       el-menu-item(index="biz" @click="handleMainMenuToggle('biz')") 业务组件
       el-menu-item(index="exp" @click="handleMainMenuToggle('exp')") 用户体验
-      el-menu-item(index="ele" @click="handleMainMenuToggle('ele')") Element拓展
+      el-menu-item(index="ele" @click="handleMainMenuToggle('ele')") Element拓展  
     .main-container
       .left-container
         el-menu(
+          :collapse="isCollapse"
           class="el-menu-vertical-demo"
           background-color="#eee"
           router
         )
-          el-menu-item(v-for="(route, index) in currentSideRoutes" :key="index" :index="route.path" :class="{ 'is-active' : route.path === $route.path }") {{route.name}}
+          el-menu-item(v-for="(route, index) in currentSideRoutes" :key="index" :index="route.path" :class="{ 'is-active' : route.path === $route.path }")
+            i.el-icon-menu
+            span(slot="title") {{route.name}}
       .right-container
         router-view
 </template>
 
 <script>
+import Hamburger from './components/Hamburger'
 export default {
+  components: {
+    Hamburger
+  },
   data() {
     return {
       mainMenuActive: 'biz', // 当前主路由
-      currentSideRoutes: []  // 当前二级路由组
+      currentSideRoutes: [],  // 当前二级路由组
+      isCollapse: false
     }
   },
   watch: {
@@ -55,6 +64,10 @@ export default {
 .el-menu-demo.el-menu--horizontal.el-menu.index-main-menu
   padding: 0 250px
 
+.el-menu-vertical-demo:not(.el-menu--collapse)
+  width: 200px
+  min-height: 400px
+
 // 自定义样式
 html,body
   height: 100%
@@ -69,7 +82,6 @@ html,body
   left: 0
 .left-container
   float: left
-  width: 250px
   height: 100%
   background: #eee
   border-right: 1px solid #ccc
