@@ -35,6 +35,10 @@ npm run build
 * 使用Vuex
 * 使用字体生成单色icon
 * 封装SVG-Icon组件
+* 使用mock.js模拟数据
+* 封装axios
+* 编写开发脚本
+* 配置git提交emoji
 
 #### 问题记录
 

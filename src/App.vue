@@ -1,5 +1,6 @@
 <template lang="pug">
   #app
+    //- 主导航
     el-menu.index-main-menu(
       :default-active="mainMenuActive"
       class="el-menu-demo" 
@@ -13,6 +14,7 @@
       el-menu-item(index="exp" @click="handleMainMenuToggle('exp')") 用户体验
       el-menu-item(index="ele" @click="handleMainMenuToggle('ele')") Element拓展  
     .main-container
+      //- 左侧导航栏
       .left-container
         el-menu(
           :collapse="isCollapse"
@@ -23,6 +25,7 @@
           el-menu-item(v-for="(route, index) in currentSideRoutes" :key="index" :index="route.path" :class="{ 'is-active' : route.path === $route.path }")
             i.el-icon-menu
             span(slot="title") {{route.name}}
+      //- 右侧内容区域
       .right-container
         transition(enter-active-class="animated fadeIn")
           router-view
@@ -38,7 +41,7 @@ export default {
     return {
       mainMenuActive: 'biz', // 当前主路由
       currentSideRoutes: [],  // 当前二级路由组
-      isCollapse: false
+      isCollapse: false // 侧边导航折叠状态
     }
   },
   watch: {
@@ -91,5 +94,8 @@ html,body
 .right-container
   padding: 20px
   height: 100%
+  box-sizing: border-box
+  overflow-x: hidden
+  overflow-y: auto
   background: #fff
 </style>
