@@ -52,7 +52,7 @@ export default {
       me.$router.push(me.currentSideRoutes[0].path)
     }
   },
-  mounted(){
+  mounted() {
     let me = this
     me.handleMainMenuToggle('biz')
   }
@@ -89,7 +89,7 @@ html,body
   .el-menu
     border: none
 .right-container
-  padding: 10px
+  padding: 20px
   height: 100%
   background: #fff
 </style>

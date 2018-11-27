@@ -22,6 +22,7 @@ npm run build
   * 配置Sass
   * 配置Element
   * 配置Vue-Router
+  * 实现去中心化路由
 * 后台管理系统布局
   * admin布局实现
   * 点击Hamburger折叠二级菜单

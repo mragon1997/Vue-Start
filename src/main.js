@@ -21,7 +21,6 @@ import _ from 'lodash'
 // Router
 import router from './router'
 
-
 new Vue({
   router,
   store,
