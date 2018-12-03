@@ -1,0 +1,7 @@
+.union-chart
+    h1 图表
+    v-chart(:forceFit="true" :data="data" :height="height" :padding="padding" :series="series")
+        v-tooltip
+        v-axis
+        v-line(position="time*rate")
+        v-guide

@@ -4,6 +4,10 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+// Viser
+import Viser from 'viser-vue'
+Vue.use(Viser)
+
 // Style
 import '@/assets/styles/index.sass'
 

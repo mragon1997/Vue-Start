@@ -1,6 +1,6 @@
 <template lang="pug">
     .biz
-        h1 three
+        h1 threecc
 </template>
 <script>
 export default {
